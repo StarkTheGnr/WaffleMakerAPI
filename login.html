@@ -1,0 +1,56 @@
+<!doctype HTML>
+<html>
+	<head>
+		    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		    <title>Dashboard</title>
+	</head>
+	<body>
+		<div class="mainDiv d-flex flex-column justify-content-center align-items-center">
+			<form class="loginForm shadow-lg" method="POST" action="/login">
+				<div class="form-group">
+					<label class="inputLabel" for="usernameInput">Username</label>
+					<input name="username" type="text" class="textInput form-control" id="usernameInput" placeholder="Please enter your username">
+				</div>
+				<div class="form-group">
+					<label class="inputLabel" for="passwordInput">Password</label>
+					<input name="password" type="password" class="textInput form-control" id="passwordInput" placeholder="Please enter your password">
+				</div>
+				<div class="d-flex flex-row justify-content-center">
+					<button type="submit" class="btnLogin btn btn-primary">Login</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
+
+<style type="text/css">
+	.mainDiv
+	{
+	height: 100vh;
+	}
+
+	.inputLabel
+	{
+		margin-left: 20px;
+		font-size: 28px;
+	}
+	.textInput
+	{
+		font-size: 20px;
+		margin-left: 30px;
+		width: 85%;
+	}
+
+	.btnLogin
+	{
+		margin: 10px;
+		font-size: 20px;
+	}
+
+	.loginForm
+	{
+		width: 600px;
+		background-color: #F5F5F5;
+		padding: 10px;
+	}
+</style>

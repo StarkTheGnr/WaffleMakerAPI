@@ -1,0 +1,29 @@
+.mainDiv
+{
+	height: 100vh;
+}
+
+.inputLabel
+{
+	margin-left: 20px;
+	font-size: 28px;
+}
+.textInput
+{
+	font-size: 20px;
+	margin-left: 30px;
+	width: 85%;
+}
+
+.btnLogin
+{
+	margin: 10px;
+	font-size: 20px;
+}
+
+.loginForm
+{
+	width: 600px;
+	background-color: #F5F5F5;
+	padding: 10px;
+}
