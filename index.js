@@ -64,6 +64,28 @@ app.get('/dashboard', (req, res) => {
 		res.sendFile(path.join(__dirname +'/login.html'));
 });
 
+app.get('/statistics', async (req, res) => {
+	let sess = req.session;
+	if(sess.username == ADMIN_USERNAME && sess.password == ADMIN_PASSWORD)
+	{
+		let page = sess.query?.page_num;
+		if(page == undefined)
+			page = 1;
+
+		let orderTotal = await dbHandler.getTotalOrderCount();
+		let dailyOrders = await dbHandler.getDailyOrderCount();
+		let dailyRevenue = await dbHandler.getDailyRevenue();
+
+		console.log(dailyOrders);
+		console.log(orderTotal);
+		console.log(dailyRevenue);
+
+		res.render(path.join(__dirname +'/statistics.ejs'), { orderCount: [orderTotal[0]['waffleTotal'], orderTotal[0]['chocolateTotal']], dailyOrders: dailyOrders, dailyRevenue: dailyRevenue });
+	}
+	else
+		res.sendFile(path.join(__dirname +'/login.html'));
+});
+
 app.get('/signout', (req, res) => {
 	let sess = req.session;
 	req.session.destroy();
